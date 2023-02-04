@@ -1,5 +1,4 @@
 export default {
-  // "domain": rsshub_domain,
   "domain": process.env.rsshub_domain,
   "rss2json": {
     "method": "get",
