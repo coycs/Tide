@@ -28,7 +28,7 @@ const getBjDate = (timestamp) => {
 }
 
 // 前一天日期
-const preDate = getSpecifyTimestamp(getBjDate(new Date().getTime()), 1);
+const preDate = getSpecifyUniDate(getBjDate(new Date().getTime()), 1);
 // const preDate = "2023.02.02";
 // 全部文章
 let posts = [];
