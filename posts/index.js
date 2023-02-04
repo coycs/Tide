@@ -30,7 +30,6 @@ const getBjDate = (timestamp) => {
 // 前一天日期
 const preDate = getSpecifyTimestamp(getBjDate(new Date().getTime()), 1);
 // const preDate = "2023.02.02";
-console.log(preDate)
 // 全部文章
 let posts = [];
 
@@ -46,11 +45,9 @@ let posts = [];
     const { route, homeBaseUrl, accounts } = community;
     for (let accountKey in accounts) {
       const account = accounts[accountKey];
-      console.log(account)
       const { author, id, tag } = account;
       const site = homeBaseUrl + id;
       const feed = domain + route + id;
-      console.log("feed:", feed)
       rss2json.params.rss_url = feed;
       await axios(rss2json)
         .then((response) => {
@@ -78,9 +75,7 @@ let posts = [];
 
   // self
   for (let account of self) {
-    console.log(account)
     const { author, site, feed, tag } = account;
-    console.log(feed)
     rss2json.params.rss_url = feed;
     await axios(rss2json)
       .then((response) => {

@@ -43,10 +43,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run script
-        run: node index.js
         env:
           rss2json_api_key: ${{ secrets.RSS2JSON_API_KEY }}
           rsshub_domain: ${{ secrets.RSSHUB_DOMAIN }}
+        run: 
+          cd posts
+          node index.js
+
 
       - name: Push new file
         run: |
