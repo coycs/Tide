@@ -49,6 +49,7 @@ jobs:
           rss2json_api_key: ${{ secrets.RSS2JSON_API_KEY }}
           rsshub_domain: ${{ secrets.RSSHUB_DOMAIN }}
         run: |
+          cd posts
           node index.js
 
 
