@@ -36,7 +36,7 @@ jobs:
 
       # 切换到getPosts文件夹
       - name: switch to "posts" folder
-        run: cd getPosts
+        run: cd posts
 
       - name: Install Dependencies
         run: npm install
