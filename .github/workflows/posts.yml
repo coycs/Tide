@@ -15,7 +15,9 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: posts
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -34,9 +36,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      # 切换到getPosts文件夹
-      - name: switch to "posts" folder
-        run: cd posts
+      # # 切换到getPosts文件夹
+      # - name: switch to "posts" folder
+      #   run: cd posts
 
       - name: Install Dependencies
         run: npm install
@@ -47,7 +49,6 @@ jobs:
           rss2json_api_key: ${{ secrets.RSS2JSON_API_KEY }}
           rsshub_domain: ${{ secrets.RSSHUB_DOMAIN }}
         run: 
-          cd posts
           node index.js
 
 
