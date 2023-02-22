@@ -24,7 +24,12 @@ export default {
           "author": "字节前端",
           "id": "org/zi-jie-qian-duan",
           "tag": "前端"
-        }
+        },
+        {
+          "author": "以南",
+          "id": "people/cjs-38-18",
+          "tag": "远程工作"
+        },
       ]
     },
     "CSDN": {
@@ -35,7 +40,12 @@ export default {
           "author": "前端修罗场",
           "id": "ImagineCode",
           "tag": "前端"
-        }
+        },
+        {
+          "author": "奇舞周刊",
+          "id": "qiwoo_weekly",
+          "tag": "前端"
+        },
       ]
     },
     "公众号": {

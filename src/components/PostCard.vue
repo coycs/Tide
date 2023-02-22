@@ -1,32 +1,31 @@
 <script>
 export default {
-  props: ["post"],
+  props: ["postItem"],
   data() {
     return {};
   },
   methods: {},
-  computed: {
-    postDateHref() {
-      return "/post/" + this.post.postDate;
-    },
+  computed: {},
+  mounted() {
+    // console.log(JSON.parse(JSON.stringify(this.postItem)));
+    // console.log(this.postItem.post);
   },
-  mounted() {},
 };
 </script>
 
 <template>
   <div class="post">
     <div class="post-config">
-      <a class="post-author" :href="post.authorLink" target="_blank">
-        {{ post.author }}
+      <a class="post-author" :href="postItem.site" target="_blank">
+        {{ postItem.author }}
       </a>
-      <a class="post-date" :href="postDateHref" target="_blank">
-        {{ post.postDate }}
-      </a>
+      <span class="post-date">
+        {{ new Date(postItem.post.date).toJSON().slice(0, 10) }}
+      </span>
     </div>
     <div class="post-title">
-      <a :href="post.postLink" target="_blank">
-        {{ post.postTitle }}
+      <a :href="postItem.post.link" target="_blank">
+        {{ postItem.post.title }}
       </a>
     </div>
   </div>
@@ -35,7 +34,8 @@ export default {
 <style lang="scss" scoped>
 // 样式参考掘金：juejin.com
 .post {
-  max-width: 500px;
+  // background-color: aqua;
+  width: 100%;
   padding: 15px;
   // border: 2px dashed #000;
   border-bottom: 1px solid rgba(228, 230, 235, 0.5);
@@ -71,29 +71,4 @@ export default {
     -webkit-line-clamp: 1;
   }
 }
-// header {
-//   line-height: 1.5;
-//   .logo {
-//     display: block;
-//     margin: 0 auto 2rem;
-//   }
-// }
-
-// @media (min-width: 1024px) {
-//   header {
-//     display: flex;
-//     place-items: center;
-//     padding-right: calc(var(--section-gap) / 2);
-//   }
-
-//   .logo {
-//     margin: 0 2rem 0 0;
-//   }
-
-//   header .wrapper {
-//     display: flex;
-//     place-items: flex-start;
-//     flex-wrap: wrap;
-//   }
-// }
 </style>

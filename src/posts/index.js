@@ -59,7 +59,7 @@ let posts = [];
               author,
               site,
               tag,
-              post: {
+              article: {
                 title: targetPost.title,
                 link: targetPost.link,
                 date: getTimestamp(targetPost.pubDate)
@@ -88,7 +88,7 @@ let posts = [];
             author,
             site,
             tag,
-            post: {
+            article: {
               title: targetPost.title,
               link: targetPost.link,
               date: getTimestamp(targetPost.pubDate)
@@ -101,7 +101,7 @@ let posts = [];
       })
   }
 
-  fs.writeFile(`./data/${preDate}.json`, JSON.stringify(posts), function (err) {
+  fs.writeFile(`./files/${preDate}.json`, JSON.stringify(posts), function (err) {
     if (err) {
       return console.error(err);
     }
